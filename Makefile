@@ -15,10 +15,9 @@ lint:
 
 deploy:
 	#push to ECR for deploy
-	#aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 561744971673.dkr.ecr.us-east-1.amazonaws.com
-	#docker build -t mlops .
-	#docker tag mlops:latest 561744971673.dkr.ecr.us-east-1.amazonaws.com/mlops:latest
-	#docker push 561744971673.dkr.ecr.us-east-1.amazonaws.com/mlops:latest
-	#ec2-16-170-203-50.eu-north-1.compute.amazonaws.com
+	aws ecr get-login-password --region eu-north-1 | docker login --username AWS --password-stdin 315782665406.dkr.ecr.eu-north-1.amazonaws.com
+	docker build -t flask-mlops .
+	docker tag flask-mlops:latest 315782665406.dkr.ecr.eu-north-1.amazonaws.com/flask-mlops:latest
+	docker push 315782665406.dkr.ecr.eu-north-1.amazonaws.com/flask-mlops:latest
 	
 all: install lint test format deploy
