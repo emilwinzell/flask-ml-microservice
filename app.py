@@ -21,7 +21,7 @@ def train():
     return html.format(format)
     
 
-@app.route("/predict", methods=["GET","POST"])
+@app.route("/predict", methods=["POST"])
 def predict():
     """Predicts the Height of MLB Players"""
 
