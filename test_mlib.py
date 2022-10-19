@@ -40,7 +40,7 @@ def test_clisearch():
     runner = CliRunner()
     result = runner.invoke(predictcli, ["--weight", "180"])
     assert result.exit_code == 0
-    assert "6 foot, 0 inches" in result.output
+    assert "6 foot, 1 inches" in result.output
 
 
 def test_retrain():
